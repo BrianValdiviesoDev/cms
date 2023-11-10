@@ -9,16 +9,11 @@ export interface PostResponse {
   publishDate: Date;
 }
 
-export interface CreatePost {
+export interface PostDto {
   title: string;
   slug: string;
-  image: string;
-  description: string;
-}
-
-export interface UpdatePost {
-  title: string;
-  slug: string;
-  image: string;
-  description: string;
+  image?: string;
+  description?: string;
+  content?: string;
+  active: boolean;
 }

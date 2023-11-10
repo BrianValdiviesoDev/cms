@@ -1,10 +1,19 @@
-import helmet from "helmet";
 import { Express } from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
+import cors from "cors";
 
 export default function expressConfig(app: Express) {
-  app.use(helmet());
+  const corsOptions = {
+    origin: [
+      "https://www.brianvaldivieso.com",
+      "https://brianvaldivieso.com",
+      "http://localhost:3000",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  };
+  app.use(cors(corsOptions));
 
   app.use(bodyParser.json({ limit: "50mb" }));
   app.use(

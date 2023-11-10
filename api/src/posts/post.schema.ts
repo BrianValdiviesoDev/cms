@@ -23,12 +23,15 @@ const PostSchema = new Schema<PostDocument>(
     active: {
       type: Boolean,
       required: true,
-      default: true,
+      default: false,
     },
     image: {
       type: String,
     },
     description: {
+      type: String,
+    },
+    content: {
       type: String,
     },
     publishDate: {

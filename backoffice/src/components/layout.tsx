@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 import Sidebar from "./sidebar";
+import { Grid } from "@mui/material";
 
 interface BaseLayoutProps {
   children?: ReactNode;
@@ -8,12 +9,14 @@ interface BaseLayoutProps {
 const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
   return (
     <>
-      <div className="page">
-        <div className="sidebar">
+      <Grid container>
+        <Grid xs={1} borderRight={1} minHeight="100vh">
           <Sidebar />
-        </div>
-        <main>{children}</main>
-      </div>
+        </Grid>
+        <Grid xs={11} p={2}>
+          <main>{children}</main>
+        </Grid>
+      </Grid>
     </>
   );
 };
