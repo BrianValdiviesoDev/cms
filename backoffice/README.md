@@ -1,27 +1,36 @@
-# React + TypeScript + Vite
+# CMS - Backoffice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend is for manage all the content that you want to publish in your blog.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Quick start
 
-## Expanding the ESLint configuration
+Before all, you need to have ready your api.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Install dependencies
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+npm run install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### TinyMce
+
+TinyMce is a third party tool to edit HTML. You need to [register](https://www.tiny.cloud/auth/signup/) in his website and get an api key.
+
+[Here](https://www.tiny.cloud/my-account/integrate/) you can find your api key.
+
+### Environment variables
+
+Now you need to create a .env file and set up this variables.
+
+- _VITE_API_URL_ : API url.
+- _VITE_TINYMCE_API_KEY_ : The TinyMce API key.
+
+### Run server
+
+If you are in development mode:
+
+```
+npm run dev
+```
